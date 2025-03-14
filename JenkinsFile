@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'g++ hello.cpp -o hello_exec'  // Compile C++ file
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh './hello_exec'  // Run compiled program
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+                sh 'echo "Deployment Successful!"'
+            }
+        }
+    }
+
+    post {
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
