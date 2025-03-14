@@ -1,1 +1,7 @@
-#include <iostream>\nusing namespace std;\nint main() { cout << "Hello, Jenkins!"; return 0; }
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, Jenkins!" << endl;
+    return 0;
+}
