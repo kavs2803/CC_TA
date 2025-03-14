@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ hello.cpp -o hello_exec'  // Compile C++ file
+                sh 'g++ main/hello.cpp -o hello_exec'  // Use `main/hello.cpp`
             }
         }
 
         stage('Test') {
             steps {
-                sh './hello_exec'  // Run compiled program
+                sh './hello_exec'
             }
         }
 
